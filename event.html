@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+    function SubmitClick(obj)
+    {
+       switch(obj.value)
+       {
+             case "Submit":
+	document.write("Submmited..");
+	break;
+            case "Register":
+	document.write("Registered...");
+	break;
+       }
+    }
+ </script>
+</head>
+<body>
+ <div>
+   <input type="button" value="Submit" onclick="SubmitClick(this)">
+   <input type="button" value="Register" onclick="SubmitClick(this)">
+ </div>
+</body>
+</html>

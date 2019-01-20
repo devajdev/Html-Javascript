@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+ <script>
+       function GetDetails()
+       {
+        switch(location.hash)
+        {
+            case "#js":
+             alert("You watched JavaScript Tutorial");
+             break;
+           case "#css":
+             alert("You viewed CSS Tutorial");
+            break;
+        }
+       }
+ </script>
+</head>
+<body>
+ <div>
+   <h1 id="toc"> Table of Contents </h1>
+    <ol>
+      <li> <a href="#html"> HTML </a> </li>
+      <li> <a href="#js"> Java Script </a> </li>
+      <li> <a href="#css"> CSS Basics </a> </li>
+    </ol>
+    <div>
+        <input type="button" value="Recently Viewed" onclick="GetDetails()">
+    </div>
+   <h2 id="html"> HTML </h2>
+    <a href="#toc"> <img src="Images/back.gif" width="30" height="30"> </a>
+   <p>
+      your paragraph... 
+ </p>
+ <h2 id="js"> Java Script </h2>
+  <a href="#toc"> <img src="Images/back.gif" width="30" height="30">  </a>
+   <p> 
+     your paragraph...
+ </p>
+ <h2 id="css"> CSS Basics </h2>
+  <a href="#toc"> <img src="Images/back.gif" width="30" height="30">  </a>
+   <p>
+   ... your paragraph...
+ </p>
+ </div>
+</body>
+</html>

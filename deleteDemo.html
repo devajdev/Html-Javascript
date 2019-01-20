@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+  function f1()
+  {
+     var product= { Id:1, Name:"TV", Price:45000.56};
+     var pic = new Image();
+     pic.src="Cars/3.jpg";
+     delete pic.src;
+     delete  product.Price;
+     document.write("Id=" + product.Id + "<br>" + "Name=" + product.Name + "<br>" + "Price=" + product.Price + "<br>" + "Src=" + pic.src);
+  }
+  f1();
+ </script>
+</head>
+<body>
+ <div>
+ </div>
+</body>
+</html>

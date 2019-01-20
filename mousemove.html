@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+   function GetColor(e)
+   {
+    var msg =document.getElementById("msg");
+      if(e.clientX>=8 && e.clientX<=81)
+      {
+        msg.style.color="red";
+      }
+     else  if(e.clientX>=86 && e.clientX<=210)
+     {
+       msg.style.color="green";
+     }
+    else  if(e.clientX>=216 && e.clientX<=300)
+     {
+       msg.style.color="blue";
+     }
+   }
+ </script>
+</head>
+<body>
+ <div>
+   <img src="Images/picker.png" onmousemove="GetColor(event)">
+   <br>
+   <h1 align="center" id="msg"> Welcome to JavaScript </h1>
+ </div>
+</body>
+</html>

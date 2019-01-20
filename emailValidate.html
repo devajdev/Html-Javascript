@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Validation </title> 
+  <style>
+       dt { 
+	font-weight:bold;
+            }
+  </style>
+  <script>
+   function CheckName()
+   {
+        var txtName = document.getElementById("txtName").value;
+        var nameError = document.getElementById("nameError");
+ if(txtName.length < 4 || txtName.length > 15)
+       {
+        nameError.innerHTML="Name 4 to 15 chars";
+      }
+      else
+      {
+         nameError.innerHTML="";
+      }
+   }
+  function CheckEmail()
+  {
+   var txtEmail = document.getElementById("txtEmail").value;
+    var emailError= document.getElementById("emailError");
+    var atpos =  txtEmail.indexOf("@");
+    var dotpos = txtEmail.lastIndexOf(".");
+    var emailId= txtEmail.substring(0,atpos);
+    var domain= txtEmail.substring(atpos+1);
+    if(atpos<2 && (dotpos-atpos<2))
+    {
+     emailError.innerHTML="Invalid Email";
+    }
+   else
+   {
+     document.write("Id=" + emailId + "<br>" + "Domain=" + domain);
+   }
+  }
+ </script>
+</head>
+<body>
+ <div>
+   <fieldset>
+       <legend> Register </legend>
+   <dl>
+      <dt> User Name </dt>
+      <dd> <input type="text" id="txtName" onkeyup="CheckName()">
+               <div id="nameError"></div> </dd>
+     <dt> Email </dt>
+     <dd> <input type="text" id="txtEmail"> 
+              <div id="emailError"> </div></dd>
+  </dl>
+   <br>
+   <input type="button" value="Register" onclick="CheckEmail()">
+  </fieldset>
+ </div>
+</body>
+</html>

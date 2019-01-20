@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script> 
+   function CheckKey(e)
+   {
+   msg =document.getElementById("msg");
+     if(e.keyCode>=65 && e.keyCode<=90)
+     {
+         msg.style.display="block";
+     }
+    else
+    {
+      msg.style.display="none";
+    }
+   }
+ </script>
+</head>
+<body>
+ <div align="center">
+     <b> Password </b>
+      <input type="password" id="txtPwd" onkeypress="CheckKey(event)">
+ </div>
+  <br> 
+  <div style="display:none" align="center" id="msg">
+        Caps Lock is ON 
+  </div>
+</body>
+</html>

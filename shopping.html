@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Shopping Cart </title> 
+  <style>
+    tr {
+          text-align:center;
+        }
+  </style>
+    
+  <script>
+          var categories=["Select a Category", "Electronics", "Shoes"];
+        function bodyload()
+        {
+            lstCategories = document.getElementById("lstCategories");
+            for(var i=0; i<categories.length; i++)
+            {
+                var opt= document.createElement("option");
+                opt.text=categories[i];
+                opt.value=categories[i];
+                lstCategories.appendChild(opt);
+            }
+        }
+     var electronics=[
+           {Name:"Samsung TV", Price:45000.56, Photo:"Images/tv.jpg"},
+          {Name:"Mobile", Price:12000.45, Photo:"Images/mobile.jpg"}
+        ];
+     var shoes =[
+         { Name:"Nike Shoe", Price:4500.67, Photo:"Images/shoe.jpg"},
+         { Name:"Lee Cooper Boot", Price:5200.45, Photo:"Images/shoe1.jpg"}
+        ];
+     function SelectCategory()
+     {
+         lstProducts = document.getElementById("lstProducts");
+        switch(lstCategories.value) 
+        {
+              case "Electronics":
+              lstProducts.innerHTML="";
+              for(var i=0; i<electronics.length; i++)
+              {
+                 var opt= document.createElement("option");
+                 opt.text=electronics[i].Name;
+                 opt.value=electronics[i].Name;
+                 lstProducts.appendChild(opt);
+              }
+              break; 
+              case "Shoes": 
+              lstProducts.innerHTML="";
+              for(var i=0; i<shoes.length; i++)
+              {
+              var opt = document.createElement("option");
+               opt.text= shoes[i].Name;
+               opt.value=shoes[i].Name;
+               lstProducts.appendChild(opt);
+              }
+              break;
+        }
+     }
+    function SelectProduct()
+    {
+          var pic = document.getElementById("pic");
+          var details=document.getElementById("details");
+          var list=[];
+          function getDetails(collection, index)
+          {
+                 list=collection;
+                 pic.src=list[index].Photo;
+                 details.innerHTML= list[index].Name + "<br>" + "&#8377;" + list[index].Price;
+          }
+          switch(lstProducts.value)
+          {
+                 case "Samsung TV":
+                 getDetails(electronics, 0);
+                 break;
+                case "Mobile":
+                 getDetails(electronics, 1);
+	break;
+                case "Nike Shoe":
+                 getDetails(shoes, 0);
+                 break;
+                case "Lee Cooper Boot":
+	getDetails(shoes,1);
+	break;
+          }
+    }
+ </script>
+</head>
+<body onload="bodyload()">
+ <div>
+   <table width="500" border="2" cellspacing="4" cellpadding="4" align="center">
+    <tr>
+       <td> 
+           Select a Category <br>
+           <select id="lstCategories" onchange="SelectCategory()"> </select>
+       </td>
+    </tr>
+    <tr>
+       <td> 
+           Select a Product <br>
+           <select id="lstProducts" onchange="SelectProduct()"> </select>
+       </td>
+    </tr>
+    <tr>
+        <td> 
+         <h2> Product Details </h2>
+          <table width="400" frame="box" rules="all">
+           <tr>
+             <td> <img src="" width="400" height="200" border="1" id="pic"> 
+               <div id="details"></div>
+             </td>
+           </tr>
+         </table>
+        </td>
+    </tr> 
+  </table>
+ </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+   function SubmitClick(obj, e)
+   {
+       document.write("Button Name: "  + obj.name + "<br>" + "Button Value:"+ obj.value + "<br>" + "Clicked At X : " + e.clientX);
+   }
+ </script>
+</head>
+<body>
+ <div>
+   <input type="button" value="Submit" name="btnSubmit" 
+onclick="SubmitClick(this, event)">
+ </div>
+</body>
+</html>

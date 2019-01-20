@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+   function f1()
+   {
+        var x=10;
+        var y="A";
+       try{
+             if(y==0)
+              throw "Can't divide by Zero";
+             if(y>x)
+              throw  "Number is Large";
+             if(isNaN(y))
+              throw  "Y must be a Number";
+             var z=x/y;
+           }
+        catch(ex) 
+          {
+             document.write(ex +"<br>");
+          }
+        finally{
+        document.write("Z=" + z);
+          }
+   }
+   f1();
+ </script>
+</head>
+<body>
+ <div>
+  
+ </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> </head>
+<body>
+ <div>
+   <form>
+    <table align="center" width="500" border="0">
+    <tr>
+        <td> User Name (Block Letters) </td>
+        <td> <input type="text" name="txtName" required  pattern="[A-Z]{4,15}" placeholder="4 to 15 chars only" maxlength="15"> </td>
+    </tr> 
+    <tr>
+        <td> Password </td>
+        <td> <input type="password" name="txtPwd"> </td>
+    </tr> 
+     <tr>
+      <td> Age </td>
+      <td> <input type="number" min="15" max="25"> </td>
+     </tr>
+    <tr>
+        <td> Date of Birth </td>
+        <td> <input type="date"> </td>
+    </tr>  
+     <tr> 
+      <td> Fav Cricketer </td>
+      <td> <input type="text" list="players"> 
+	<datalist  id="players">
+	<option> Sachin </option>
+	<option> Sehwag </option>
+                 	<option> Dravid </option>
+	<option>Dhoni </option>
+	</datalist>
+      </td>
+     </tr>
+    <tr>
+        <td> Email </td>
+        <td> <input type="email"> </td>
+    </tr> 
+    <tr>
+        <td> Fav Color </td>
+        <td> <input type="color"> </td>
+    </tr> 
+    <tr>
+        <td> Grade  </td>
+        <td> <input type="range"> </td>
+    </tr> 
+    <tr>
+        <td> Upload Photo </td>
+        <td> <input type="file"> </td>
+    </tr> 
+    <tr>
+       <td colspan="2" align="center">
+	<button> Register </button>
+      </td>
+    </tr>
+   </table>
+  </form>
+ </div>
+</body>
+</html>

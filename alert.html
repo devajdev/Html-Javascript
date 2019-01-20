@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Output Demo </title> 
+  <script>
+   function bodyload()
+   {
+     alert("Welcome to JavaScript");;
+     console.log("Page Successfully loaded on to client browser");
+    }
+   function DeleteClick()
+   {
+    console.log("Client Clicked Delete Button");
+     x = confirm("Record will be deleted");
+     msg = document.getElementById("msg");
+     if(x==true)
+     {
+      msg.innerText="Record Deleted";
+      console.log("Client Clicked OK");
+     }
+    else
+    {
+     msg.innerHTML="<font color='red'>Action Canceled</font>";
+     console.log("Client Canceled Confirm");
+     }
+   }
+ </script>
+</head>
+<body onload="bodyload()">
+ <div align="center">
+   <form>
+        <input type="button" value="Delete" onclick="DeleteClick()">
+   </form>
+    <br>
+     <div id="msg"> </div>
+ </div>
+</body>
+</html>
+

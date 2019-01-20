@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+         var cities=["Delhi", "Hyd", "Chennai"];
+         function GetCities()
+         {
+              lstCities = document.getElementById("lstCities");
+              msg= document.getElementById("msg");
+
+             lstCities.innerHTML="";
+           for(var i=0; i<cities.length; i++)
+            {
+               var opt = document.createElement("option");
+               opt.text=cities[i];
+               opt.value=cities[i];
+               lstCities.appendChild(opt);
+            }
+           msg.innerHTML="Total No of Cities:" + cities.length;
+         }
+         function bodyload()
+         {
+           GetCities();
+         }
+      function AddClick()
+      {
+        lstCities = document.getElementById("lstCities");
+       txtCity = document.getElementById("txtCity");
+       if(cities.indexOf(txtCity.value)==-1)
+       {
+       cities.push(txtCity.value);
+       alert("City Added Successfully"); 
+       GetCities();
+       }
+      else
+      {
+       alert("City Existis");
+      }
+      }
+      function SortClick()
+      {
+          cities.sort();
+          GetCities();
+      }
+ </script>
+</head>
+<body onload="bodyload()">
+ <div>
+    <fieldset>
+           <legend> Select City </legend>
+           <select id="lstCities" size="3"> 
+           </select> <br>
+           <input type="button" value="Sort" onclick="SortClick()">
+           <div id="msg"> </div>
+    </fieldset>
+ </div>
+ <div>
+     <fieldset>
+         <legend> Manipulate Cities </legend>
+         <dl>
+          <dt> Add New City </dt>
+          <dd> <input type="text" id="txtCity"> <input type="button" value="Add" onclick="AddClick()"> 
+         <input type="button" value="Remove">
+        </dd> 
+        </dl>
+     </fieldset>
+ </div>
+</body>
+</html>

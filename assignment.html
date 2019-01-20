@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+    function SubmitClick()
+    {
+        var java= document.getElementById("optJava");
+        var  dot= document.getElementById("optDot");
+        var ora = document.getElementById("optOra");
+        var msg = document.getElementById("msg");
+
+        var courses="";
+        if(java.checked)
+           courses+=java.value + "<br>";
+        if(dot.checked)
+           courses+=dot.value + "<br>";
+        if(ora.checked)
+           courses+=ora.value + "<br>";
+       msg.innerHTML="Selected Courses :" + "<br>" + courses;
+    }
+ </script>
+</head>
+<body>
+ <div>
+   <fieldset>
+        <legend> Select Courses </legend>
+        <ul>
+          <li> <input type="checkbox" id="optJava" value="Java"> Java </li>
+          <li> <input type="checkbox" id="optDot" value=".NET"> .NET </li>
+          <li> <input type="checkbox" id="optOra" value="Oracle"> Oracle </li> 
+        </ul>
+      <br>
+       <input type="button" value="Submit" onclick="SubmitClick()">
+   </fieldset> <br>
+    <div align="center" id="msg">
+    </div>
+ </div>
+</body>
+</html>

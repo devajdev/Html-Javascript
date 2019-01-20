@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Multiple Conditions </title> 
+  <script>
+     function SubmitClick()
+     {
+         var userDetails={UserName:'John', Pin:405, OTP:567890};
+
+        var txtName= document.getElementById("txtName").value;
+        var txtCode = document.getElementById("txtCode").value;
+        var msg= document.getElementById("msg");
+
+         if(userDetails.UserName==txtName)
+         {
+             if(userDetails.Pin==txtCode)
+             {
+               msg.innerHTML="PIN Verified";
+             }
+            else if(userDetails.OTP==txtCode)
+            {
+              msg.innerHTML="OTP Verified";
+            }
+           else
+           {
+             msg.innerHTML="Invalid PIN / OTP";
+           }
+         }
+        else
+        {
+           msg.innerHTML="Invalid User Name";
+        }
+     }
+ </script>
+</head>
+<body>
+ <div>
+   <fieldset>
+       <legend> Payment </legend>
+       <dl>
+        <dt> Name on Card </dt>
+        <dd> <input type="text" id="txtName">
+         </dd>
+         <dt> PIN / OTP </dt>
+         <dd>
+               <input type="text" id="txtCode" placeholder="you can use your OTP">
+          </dd>
+      </dl>
+   </fieldset>
+   <br>
+    <input type="button" value="Submit" onclick="SubmitClick()">
+   <br>
+   <div align="center" id="msg">
+   </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+    function ChangeCase()
+    {
+        var txtName= document.getElementById("txtName").value;
+        document.getElementById("txtName").value=txtName.toUpperCase();
+        document.getElementById("msg").innerHTML="Hello ! " + txtName.fontcolor('green');
+    }
+ </script>
+</head>
+<body>
+ <div>
+    Name : 
+   <input type="text" id="txtName" placeholder="Block Letters" onblur="ChangeCase()"> 
+ </div>
+  <br>
+  <div>
+     <span id="msg">  </span>
+  </div>
+</body>
+</html>

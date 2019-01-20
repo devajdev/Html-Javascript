@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Ternary Operator </title> 
+  <script>
+   function Login()
+   {
+      var uname= document.getElementById("txtName").value;
+      var pwd = document.getElementById("txtPwd").value;
+      var msg = document.getElementById("msg");
+     
+      var userDetails={ UserName:'John', Password: 'admin' };
+
+      (uname==userDetails.UserName && pwd==userDetails.Password) ? document.write("Login Success..") : msg.innerHTML="Invalid User Name / Password";
+   }
+ </script>
+</head>
+<body>
+ <div>
+   <fieldset>
+        <legend> Login </legend>
+        <dl>
+           <dt>  User Name </dt>
+           <dd> <input type="text" id="txtName"> </dd>
+          <dt> Password </dt>
+          <dd> <input type="password" id="txtPwd"> </dd>
+           <br>
+           <input type="button" value="Login" onclick="Login()">
+        </dl>
+   </fieldset>
+ </div>
+  <div align="center">
+      <h2 id="msg"> </h2>
+   </div>
+</body>
+</html>

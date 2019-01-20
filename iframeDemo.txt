@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> </head>
+<body>
+  <h1> Welcome to Website </h1>
+ <div>
+    <iframe name="frame1" src="tutorial.html"> </iframe>
+ </div>
+</body>
+</html>

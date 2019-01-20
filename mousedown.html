@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+   function bulbon()
+   {
+    document.getElementById("bulb").src="Images/bulbon.png";
+   }
+   function bulboff()
+   {
+    document.getElementById("bulb").src="Images/bulboff.png";
+   }
+ </script>
+</head>
+<body>
+ <div>
+     <img src="Images/bulboff.png" id="bulb" onmousedown="bulbon()" onmouseup="bulboff()">
+     <br>
+     <p> Press hold down mouse button to ON bulb </p>
+ </div>
+</body>
+</html>

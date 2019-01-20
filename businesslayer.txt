@@ -1,0 +1,57 @@
+// Import Modules
+var mysql = require("mysql");
+var express = require("express");
+var bodyParser = require("body-parser");
+
+//Express Configuration
+var app=express();
+app.use(express.static("Project"));
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
+
+//MySql Configuration
+
+var con = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'1234',
+    database:'ngprojectdb'
+});
+
+// Create API Requests
+
+app.get('/',function (req,res) {
+    res.redirect('Project/index.html');
+})
+
+con.connect();
+app.get('/Products',function (req, res) {
+    con.query('Select * from tblProducts',function (err, rows, fields) {
+        res.send(rows);
+    })
+})
+
+app.post('/addProduct',function (req, res) {
+    var data ={
+        ProductId:req.body.ProductId,
+        Name:req.body.Name,
+        Price:req.body.Price,
+        Mfd:new Date(req.body.Mfd)
+    }
+    con.query('Insert Into tblProducts SET ?',data,function (err, rows, fields) {
+       if(!err)
+           console.log('Record Inserted');
+    })
+})
+
+app.listen(8080);
+console.log('Server Started..');
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+    function SubmitClick()
+   {
+        var txtColor= document.getElementById("txtColor").value;
+        var msg= document.getElementById("msg");
+        var color=txtColor.toLowerCase();
+       switch(color)
+       {
+          case "red":
+            msg.style.color=color;
+          break;
+         case "green":
+           msg.style.color=color;
+         break;
+         default :
+           msg.innerHTML="Please Enter Green or Red";
+       }
+   }
+ </script>
+</head>
+<body>
+ <div>
+     Color : <input type="text" id="txtColor">
+                 <input type="button" value="Submit" onclick="SubmitClick()">
+    <br>
+     <div id="msg" align="center"> Sample Text </div>
+ </div>
+</body>
+</html>

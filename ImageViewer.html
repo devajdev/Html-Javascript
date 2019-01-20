@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+      function ShowImage()
+      {
+           var cars=['Cars/1.jpg','Cars/2.jpg','Cars/3.jpg', 'Cars/9.jpg'];
+           var carNames=['Audi', 'Audi-Q7', 'RangeRower','Ferrari'];
+          var pic= document.getElementById("pic");
+          var txtRange= document.getElementById("txtRange");
+          var carname= document.getElementById("carname");
+
+           pic.src=cars[txtRange.value];
+           carname.innerHTML= carNames[txtRange.value];
+      }
+  </script>
+</head>
+<body>
+ <div>
+   <table width="500" border="2" align="center" cellspacing="4" cellpadding="4">
+    <tr>
+       <td align="center" id="carname">
+       </td>
+    </tr>
+    <tr>
+        <td> <img id="pic" src="Cars/1.jpg" width="500" height="300">
+       </td>
+    </tr>
+    <tr>
+        <td align="center">
+         <input type="range" min="0" max="4" value="0" id="txtRange" onchange="ShowImage()">
+        </td>
+    </tr>
+ </table>
+ </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+     function CheckUser()
+     {
+        var users=[
+            { Name:'john' },
+            { Name:'john12'},
+            { Name:'david'},
+            { Name:'david123'}
+         ]
+       var userName = document.getElementById("txtName").value;
+       var msg= document.getElementById("msg");
+
+        for(var i=0; i<users.length; i++)
+        {
+              if(userName==users[i].Name)
+              {
+                 msg.innerHTML="User Name Taken- Try Another";
+                return;
+              }
+            else
+            {
+               msg.innerHTML="Available";
+            }
+        }
+     }
+ </script>
+</head>
+<body>
+ <div>
+    <fieldset>
+       <legend> Register User </legend>
+       User Name : 
+       <input type="text" id="txtName" onkeyup="CheckUser()">
+       <span id="msg"> </span>
+   </fieldset>
+ </div>
+</body>
+</html>

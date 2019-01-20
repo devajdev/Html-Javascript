@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Navigator Demo </title> 
+ <style>
+    dt {
+        font-weight:bold;
+      }
+ </style>
+  <script>
+   function GetDetails()
+  {
+      document.getElementById("family").innerHTML=navigator.appName;
+
+      document.getElementById("lang").innerHTML=navigator.language;
+
+      document.getElementById("cookie").innerHTML=navigator.cookieEnabled;
+
+      document.getElementById("agent").innerHTML=navigator.userAgent;
+
+   for(var i=0;i<navigator.plugins.length; i++)
+      {
+          document.getElementById("plug").innerHTML += navigator.plugins[i].name + "<br>" ;
+      }
+     var msg =  document.getElementById("msg");
+     if(navigator.plugins["Chrome PDF Viewer"]==undefined)
+     {
+        msg.innerHTML="NO";
+    }
+   else
+    {
+     msg.innerHTML="YES";
+    }
+  }
+ </script>
+</head>
+<body>
+  <noscript> Please enable JavaScript on your browser </noscript>
+ <div align="center">
+    <input type="button" value="Get Browser Details" onclick="GetDetails()">
+ </div> <br>
+ <div>
+   <dl>
+   <dt> Browser Family </dt>
+    <dd id="family"></dd>
+   <dt> Browser Language </dt>
+   <dd id="lang"> </dd>
+   <dt> Cookie Enabled </dt>
+   <dd id="cookie"> </dd>
+   <dt> Supported on </dt>
+   <dd id="agent"> </dd>
+   <dt> Plug-in Supported </dt>
+   <dd id="plug"> </dd> 
+   <dt>Can user View PDF Documents ?</dt>
+   <dd id="msg"> </dd>
+ </dl>
+ </div>
+</body>
+</html>

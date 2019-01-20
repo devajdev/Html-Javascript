@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Nested Conditions </title> 
+  <script>
+   function Pay()
+   {
+      var userDetails=              {
+               CardNo:5555666677778888,    
+               Cvv:405,                Year:2020
+              };
+      var txtCard = document.getElementById("txtCard").value;
+      var txtCvv = document.getElementById("txtCvv").value;
+      var lstYear = document.getElementById("lstYear").value;
+      var msg=document.getElementById("msg");
+
+       if(txtCard=="")
+       {
+      msg.innerHTML="Please Enter Card Number";
+       }
+     else
+     {
+        if(userDetails.CardNo==txtCard)
+        {
+            if(userDetails.Cvv==txtCvv)
+            {
+                 if(userDetails.Year==lstYear)
+                 {
+                   document.write("Payment Successfull..");
+                 }
+                else
+                {
+                  msg.innerHTML="Invalid Year";
+                }
+            }
+           else
+           {
+             msg.innerHTML="Invalid CVV";
+           }
+       }
+      else
+      {
+        msg.innerHTML="Invalid Card No";
+      }
+    }  
+  }
+ </script>
+</head>
+<body>
+ <div>
+    <fieldset>
+        <legend> Payment Details </legend>
+        <dl>
+           <dt> Card Number </dt>
+           <dd> <input type="text" id="txtCard"> </dd>
+           <dt> CVV </dt>
+           <dd> <input type="text" id="txtCvv">
+          </dd>
+          <dt> Expiry Year </dt>
+           <dd>
+          <select id="lstYear">
+          <option value="2019"> 2019</option>
+          <option value="2020"> 2020</option>
+         <option value="2021"> 2021</option>
+         </select>
+           </dd>
+        </dl>
+    </fieldset>
+    <br> 
+    <input type="button" value="Pay" onclick="Pay()">
+     <br>
+    <div id="msg" align="center"> </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+    function Animate(e)
+    {
+        flag = document.getElementById("flag");
+        flag.style.position="fixed";
+        flag.style.left=e.clientX + "px";
+        flag.style.top=e.clientY + "px";
+    }
+ </script>
+</head>
+<body onmousemove="Animate(event)">
+ <div style="height:1000px">  
+ </div>
+ <img src="Images/flag.gif" id="flag">
+</body>
+</html>

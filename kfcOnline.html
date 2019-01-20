@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <style>
+     tr {
+          background-color:maroon;
+          color:white;
+         text-align:center;
+           }
+      dt {
+           font-weight:bold;
+           background-color:maroon;
+           color:white;
+          }
+  </style>
+  <script>
+       function PlaceOrder()
+       {
+         document.getElementById("OrderSummary").style.display="block";
+
+        document.getElementById("orderForm").style.display="none";
+
+         uname= document.getElementById("txtName");
+         mobile = document.getElementById("txtMobile");
+         burger = document.getElementById("optBurger");
+         roller = document.getElementById("optRoller");
+        fries= document.getElementById("optFries");
+        krusher = document.getElementById("optKrusher");
+        
+        var mcost=0;
+        var acost=0;
+        var mname="";
+        var aname="";
+
+        if(burger.checked)
+        {
+          mcost=120;
+          mname=burger.value;
+        }
+
+        if(roller.checked)
+        {
+          mcost=100;
+          mname=roller.value;
+        }
+ 
+       if(fries.checked)
+       {
+          acost=60;
+          mcost=mcost + acost;
+          aname+=fries.value +"<br>";
+       }
+     
+      if(krusher.checked)
+       {
+         acost=80;
+         mcost=mcost + acost; 
+         aname+=krusher.value +"<br>";
+       }
+      
+       document.getElementById("lblName").innerHTML= uname.value;
+
+          document.getElementById("lblMobile").innerHTML= mobile.value;
+
+  document.getElementById("lblMeal").innerHTML= mname;
+
+    document.getElementById("lbladd").innerHTML= aname;
+ 
+  document.getElementById("lblAmount").innerHTML= mcost;
+     }
+ </script>
+</head>
+<body>
+ <div> 
+  <font size="6">
+  <table width="800" border="2" cellspacing="4" cellpadding="4" align="center" id="orderForm">
+   
+    <tr>
+       <td colspan="2">
+        <img src="Images/kfctop.png">
+      </td>
+    </tr>
+      <tr> 
+     <td colspan="2"> Customer Details </td>
+     </tr>
+    <tr>
+     <td> Customer Name </td>
+     <td> <input type="text" id="txtName"> </td>
+    </tr>
+    <tr>
+        <td> Mobile </td>
+        <td> <input type="text" id="txtMobile"> </td>
+    </tr>
+   <tr>
+     <td colspan="2"> Select a Meal </td>
+   </tr>
+   <tr>
+      <td> 
+      <img src="Images/omg1.png">
+      <br>
+      <input type="radio" name="meal" id="optBurger" value="OMG Burger"> OMG Burger ( &#8377; 120/-)
+     </td>
+      <td> 
+      <img src="Images/omg2.png">
+      <br>
+         <input type="radio" name="meal" id="optRoller" value="OMG Roller"> OMG Roller ( &#8377; 100/-)
+     </td>
+   </tr>
+   <tr>
+      <td colspan="2"> Select Ad-ON's </td>
+   </tr>
+   <tr>
+     <td> 
+       <img src="Images/fries1.png">
+       <br>
+       <input type="checkbox" id="optFries" value="Large Fries"> Large Fries (&#8377; 60/-)
+
+     </td>
+     <td> 
+      <img src="Images/krusher1.png">
+      <br>
+         <input type="checkbox" id="optKrusher" value="Brownie Krusher"> Brownie Krusher (&#8377; 80/-)
+    </td>
+   </tr>
+   <tr>
+    <td colspan="2"> 
+      <input type="button" value="Place Order" onclick="PlaceOrder()"> 
+  </td>
+  </tr>
+ </table>
+  <br>
+  <dl id="OrderSummary" style="display:none">
+      <h2> Order Summary </h2>
+       <dt> Customer Name </dt>
+       <dd id="lblName"> </dd>
+       <dt> Mobile </dt>
+       <dd id="lblMobile"> </dd>
+       <dt> Meal </dt>
+       <dd id="lblMeal"> </dd>
+       <dt> AD-On's </dt>
+       <dd id="lbladd"> </dd>
+       <dt> Total Bill Amount </dt>
+       <dd id="lblAmount"> </dd>
+       <br>
+     <input type="button" value="Print Bill" onclick="window.print()">
+  </dl>
+   <br>
+   
+ </font>
+ </div>
+</body>
+</html>

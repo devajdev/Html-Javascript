@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+   function Cut()
+   {
+    document.getElementById("msg").innerHTML="Removed and Copied on to Clipboard";
+   }
+    function Copy()
+   {
+    document.getElementById("msg").innerHTML="Copied to Clipboard";
+   }
+    function Paste()
+   {
+    document.getElementById("msg").innerHTML="Clipboard Content Inserted";
+   }
+   function Focus()
+   {
+    document.getElementById("msg").innerHTML="Please Enter Comments min 100 max 4000 chars";
+   }
+ </script>
+</head>
+<body>
+  <h2> Selection , Cut , Copy and Right Click are disabled on this page </h2>
+ <div>
+    Your Comments: <br>
+    <textarea  oncut="Cut()" oncopy="Copy()" onpaste="Paste()" onfocus="Focus()" rows="4" cols="40">
+    </textarea>
+    <br>
+    <div align="center" id="msg"></div>
+ </div>
+</body>
+</html>

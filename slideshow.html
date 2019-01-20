@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+         var cars=["Cars/1.jpg", "Cars/2.jpg", "Cars/3.jpg", "Cars/4.jpg"];
+         var count=0;
+         
+         function PreviousClick()
+         {
+             var pic = document.getElementById("pic");
+             count--;
+             pic.src=cars[count];
+         }
+         function NextClick()
+         {
+            var pic = document.getElementById("pic");
+             count++;
+             pic.src=cars[count];
+         }
+  </script>
+</head>
+<body>
+ <div>
+     <table width="600" border="2" cellspacing="5" align="center">
+        <tr> 
+            <td> <input type="button" value="Previous" onclick="PreviousClick()"> </td>
+            <td> <img src="Cars/1.jpg" width="600" height="300" id="pic"> </td>
+            <td> <input type="button" value="Next" onclick="NextClick()"> </td>
+        </tr>
+    </table>
+ </div>
+</body>
+</html>

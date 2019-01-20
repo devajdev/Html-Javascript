@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+ <script>
+     function  f1()
+     {
+          var product={
+                Id:1,
+                Name:"Samsung TV",
+                Price:45000.53,
+                IsInStock:false,
+                Quantity:3,
+                ShippedTo:['Delhi','Hyd'],
+                Total : function() {
+                   return product.Quantity * product.Price;
+                 }
+           };
+           if(product.IsInStock==true) 
+              stock="Available";
+           else
+              stock="Out Of Stock"; 
+
+        document.write("Id=" + product.Id + "<br>" + "Name=" + product.Name + "<br>" + "Price=" + product.Price + "<br>" + "Is In Stock=" + stock + "<br>" + "Shipped To=" + product.ShippedTo + "<br>" + "Total Amount=" + product.Total());
+     }
+    f1();
+ </script>
+</head>
+<body>
+ <div>
+ </div>
+</body>
+</html>

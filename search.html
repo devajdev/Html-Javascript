@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Search Demo </title> 
+  <script>
+    function GetString()
+    {
+     var topics=[
+          {topic:"JavaScript", description:"JavaScript is a client side scripting language"},
+          { topic:"JQuery", description:"JQuery is a client side library"}
+        ];
+      var query = location.search;
+      var word= 
+    query.substring((query.indexOf("=")) +  1);
+      var description="";
+        switch(word.toLowerCase())
+        {
+              case "javascript":
+               description= topics[0].description;
+               break;
+              case "jquery":
+              description= topics[1].description;
+              break;
+        }
+       document.getElementById("msg").innerHTML="Searching For : " + word + "<br>" + "<p>" + description + "</p>";
+    }
+ </script>
+</head>
+<body>
+ <form>
+ <div align="center">
+    <font size="6">Google</font>
+   <br> 
+   <input type="text" size="45" name="search" id="txtSearch"> 
+   <br><br>
+   <input type="submit" value="Search">
+   <input type="button" value="Show Results" onclick="GetString()">
+ </div>
+  <br> <br>
+  <div align="center" id="msg"> </div>
+ </form>
+</body>
+</html>

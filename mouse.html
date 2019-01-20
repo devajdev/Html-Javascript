@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <style>
+  #gallery img {
+  width: 200px;
+   height:200px;
+  -webkit-transition-duration: 0.6s;
+  opacity: 0.6;
+  z-index: 1; 
+  margin: 0; 
+  position: relative; 
+}
+#gallery img:hover { 
+  -webkit-transform: scale( 1.5 ); 
+  box-shadow: 0px 0px 25px gray; 
+  -webkit-box-shadow: 0px 0px 25px gray; 
+  opacity: 1; 
+  z-index: 10; 
+</style>
+  <script>
+   function ad1()
+   {
+   document.getElementById("ad").src="Images/rDigital.jpg";
+   }
+   function ad2()
+   {
+   document.getElementById("ad").src="Images/pepsi.jpg";
+   }
+  function bodyload()
+  {
+     var cars=["Cars/1.jpg", "Cars/2.jpg", "Cars/3.jpg", "Cars/4.jpg"];
+     gallery = document.getElementById("gallery");
+     for(var i=0; i<cars.length; i++)
+     {
+          var pic = new Image();
+          pic.src=cars[i];
+          pic.height="100";
+          pic.width="100";
+          gallery.appendChild(pic);
+     }
+  }
+ </script>
+</head>
+<body onload="bodyload()">
+ <div>
+    <img src="Images/pepsi.jpg" width="400" height="100" id="ad" onmouseover="ad1()" onmouseout="ad2()">
+   <p> Move mouse over the Image to change Advertisement </p>
+  <br>
+  <marquee scrollamount="7" onmouseover="this.stop()" onmouseout="this.start()">
+  <div id="gallery">
+  </div>
+  </marquee>
+ </div>
+</body>
+</html>

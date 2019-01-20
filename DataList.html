@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Demo </title> 
+  <style>
+       dt{ 
+             font-weight:bold;
+             background-color:yellow; 
+             text-align:center
+          }
+  </style>
+    <script>
+        function bodyload()
+        {
+         var heads=document.getElementsByTagName("h1");
+         alert("Total No of Headings on Page: " + heads.length);
+        }
+   </script>
+</head>
+<body onload="bodyload()">
+   <h1> HTML </h1>
+   <h1> Angular </h1>
+    <font size="6"> <b>JavaScript</b> </font>
+    <div> Table of Contents </div> 
+   <div>
+      <dl>
+      <dt>Web Server</dt>
+      <dd>
+      It resembles both software and hardware. 
+      </dd>
+      <dt>Web Site</dt>
+      <dd>
+      It is a virtual directory on web server. 
+       </dd>
+     </dl>
+   </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <style>
+      	dt{ 
+	font-weight:bold;
+	}
+  </style>
+  <script>
+     function GetDetails(e)
+    {
+      document.getElementById("KeyCode").innerHTML=e.keyCode;
+  document.getElementById("CharCode").innerHTML=e.charCode;
+    document.getElementById("Which").innerHTML=e.which;
+      document.getElementById("Shift").innerHTML=e.shiftKey;
+    }
+ </script>
+</head>
+<body>
+ <div>
+    Your Text :
+    <input type="text" id="txtName" onkeypress="GetDetails(event)">
+    <br>
+    <dl>
+       <dt> Key Code </dt>
+       <dd id="KeyCode"> </dd>
+       <dt> Char Code </dt>
+       <dd id="CharCode"> </dd>
+       <dt> Which Key </dt>
+       <dd id="Which"> </dd>
+       <dt> Shift Key </dt>
+        <dd id="Shift"> </dd>
+   </dl>
+ </div>
+</body>
+</html>

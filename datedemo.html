@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+  <script>
+     function bodyload()
+     {
+     var name=prompt("Enter Your Name");
+
+      var days=["Sunday", "Monday", "Tue", "Wed", "Thu", "Fri", "Staturday"];
+      var months=["Jan", "Feb", "Mar", "Apr", "May", "June", "July"];
+
+       var now = new Date();
+       var weekDay= now.getDay();
+       var day = now.getDate();
+       var month = now.getMonth();
+       var year = now.getFullYear();
+       var today = days[weekDay]+ " " + day + ", " + months[month] + " " + year;
+       document.getElementById("msg").innerHTML=today;
+ 
+        var pic = document.getElementById("pic");
+        document.getElementById("uname").innerHTML="Hello !  " + name;
+        var hrs = now.getHours()
+        if(hrs >= 5 && hrs < 12)
+        {
+            pic.src="Images/morning.png";
+        }
+       else if(hrs >=12 && hrs <17)
+       {
+           pic.src="Images/afternoon.gif";
+       }
+      else if(hrs >= 17 && hrs <=23)
+      {
+         pic.src="Images/evening.gif";
+      }
+     }
+ </script>
+</head>
+<body onload="bodyload()">
+ <div id="msg" align="center">
+ </div>
+ <br>
+  <div align="center">
+     <h2 align="center" id="uname"> </h2>
+     <br> <br>
+    <img src="" id="pic" width="100" height="100">
+ </div>
+</body>
+</html>
